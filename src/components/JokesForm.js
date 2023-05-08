@@ -25,7 +25,6 @@ function JokesForm(props) {
           onChange={(event) => props.setAmount(event.target.value)}
         />
       </label>
-      {/* <button type="submit">Get Jokes</button> */}
     </form>
   );
 }

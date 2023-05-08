@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Jokes from "./components/Jokes";
+import JokesForm from "./components/JokesForm";
+import Statistics from "./components/Statistics";
+import { getJokes } from "./components/api";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [type, setType] = useState("single");
+  const [amount, setAmount] = useState(10);
+  const [jokes, setJokes] = useState([]);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
+  useEffect(() => {
+    async function fetchJokes() {
+      const data = await getJokes(type, amount);
+      setJokes(data);
+    }
+    fetchJokes();
+  }, [type, amount]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="page">
+      <div className="content">
+        <h1>Jokes</h1>
+        <JokesForm
+          type={type}
+          setType={setType}
+          amount={amount}
+          setAmount={setAmount}
+          handleSubmit={handleSubmit}
+        />
+        <Jokes type={type} amount={amount} jokes={jokes} />
+        <Statistics jokes={jokes} />
+      </div>
     </div>
   );
 }

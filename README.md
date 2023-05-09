@@ -1,6 +1,28 @@
-# Getting Started with Create React App
+# Programming jokes frontend
+A site showcasing jokes from a backend server. Created in create-react-app. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Approach
+These are the parts that I have included in the project, that the time allowed.
+
+Allows the user to search for jokes by specifying the amount of jokes and the types
+he wishes to see. Lists the fetched Jokes as some type of list
+- Render all the fetched jokes texts (the actual joke content)
+- Visibly highlight each word with the letter a in it (lower- or uppercase) in any
+way you want
+- Display the jokes category close to the joke itself
+- Presents the data from the below specified analysis somewhere in relation to the list
+of jokes
+
+Analysis:
+
+- Summarize the total amount of characters
+- Calculate which is the most common letter.
+
+Preview of the page:
+
+<img width="600" alt="Screenshot 2023-05-09 at 18 14 18" src="https://github.com/sofiadarkeweb/programming-jokes-frontend/assets/69891288/08b45569-d851-4e90-8577-303726996d92">
+<img width="600" alt="Screenshot 2023-05-09 at 18 14 30" src="https://github.com/sofiadarkeweb/programming-jokes-frontend/assets/69891288/4e0785c7-f13c-4d8d-9ace-cc1e74f326d8">
+
 
 ## Available Scripts
 
